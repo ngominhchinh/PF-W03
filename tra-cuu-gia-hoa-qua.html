@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu giá hoa quả</title>
+</head>
+
+<body>
+    <h1>Giá hoa quả</h1>
+    
+        <input type="text" id="fruit">
+        <button id="print">Xem giá</button>
+    
+    <h3 id="result"></h3>
+
+    <script>
+        let fruit = ["ổi", "dưa hấu", "táo", "xoài", "cam", "chôm chôm", "măng cụt"]
+        let price = [20000, 20000, 30000, 40000, 40000, 50000];
+        document.getElementById("print").onclick = () => {
+            let name = document.getElementById("fruit").value.toLowerCase();
+            let result = 0;
+            let message = '';
+            for (let i = 0; i < fruit.length; i++) {
+                if(name == fruit[i]){
+                    result = price[i];   
+                    message =  result.toLocaleString("vi-VN") + " VND";                    
+                    break;                
+                } else{
+                    message = "Sản phẩm không nằm trong danh mục";
+                    break;
+                }
+            }
+            document.getElementById("result").innerHTML = message;
+        }
+    </script>
+</body>
+
+</html>
