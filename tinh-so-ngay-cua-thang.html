@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính số ngày của tháng</title>
+</head>
+<body>
+    <input type="text" id="month">
+    <button id="btn">Tính số ngày</button>
+    
+    <script>
+        document.getElementById("btn").onclick =()=>{
+            let mon = document.getElementById("month").value;
+            let result = Number(mon);
+            let message='';
+            if(!isNaN(result) && result >= 1 && result <=12){                
+                switch(result){
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        alert(`Tháng ${result} có 30 ngày`);
+                        break;
+                    case 2:
+                        alert(`Tháng ${result} có 28 hoặc 29 ngày`);
+                        break
+                    default:
+                        alert(`Tháng ${result} có 31 ngày`);
+                        break;
+                }
+            } else{
+                alert("Vui lòng nhập số từ 1 đến 12");
+            }
+        }
+    </script>
+</body>
+</html>
