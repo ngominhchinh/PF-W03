@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .txt {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-4">
+                <div class="row border ">
+                    <input type="text" class="form-control txt" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" id="nhap">
+                </div>
+
+                <div class="row ">
+                    <div class="col-3 ">
+                        <button onclick="xoa()" class="btn btn-outline-primary">C</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('()')" class="btn btn-outline-primary">()</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('%')" class="btn btn-outline-primary">%</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('/')" class="btn btn-outline-primary">/</button>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-3 ">
+                        <button onclick="nhap('7')" class="btn btn-outline-primary">7</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('8')" class="btn btn-outline-primary">8</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('9')" class="btn btn-outline-primary">9</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('*')" class="btn btn-outline-primary">x</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 ">
+                        <button onclick="nhap('4')" class="btn btn-outline-primary">4</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('5')" class="btn btn-outline-primary">5</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('6')" class="btn btn-outline-primary">6</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('-')" class="btn btn-outline-primary">-</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 ">
+                        <button onclick="nhap('1')" class="btn btn-outline-primary">1</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('2')" class="btn btn-outline-primary">2</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('3')" class="btn btn-outline-primary">3</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('+')" class="btn btn-outline-primary">+</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 ">
+                        <button onclick="xoaHet()" class="btn btn-outline-primary">Clear</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="nhap('0')" class="btn btn-outline-primary">0</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="xoa()" class="btn btn-outline-primary">Del</button>
+                    </div>
+                    <div class="col-3">
+                        <button onclick="tinh()" class="btn btn-outline-primary">=</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        function nhap(btn) {
+            document.getElementById('nhap').value += btn;
+        }
+        const xoaHet = () => {
+            document.getElementById("nhap").value = '';
+        }
+        const xoa = () => {
+            let str = document.getElementById('nhap').value;
+            let newStr = str.slice(0, -1);
+            document.getElementById('nhap').value = newStr;
+
+        }
+        const tinh = () => {            
+            let result = document.getElementById('nhap').value;
+            document.getElementById('nhap').value = eval(result);
+        }
+    </script>
+</body>
+
+</html>
