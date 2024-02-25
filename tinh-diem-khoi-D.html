@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm đại học khối D</title>
+</head>
+<body>
+    <label>Môn Toán</label>
+    <input type="number" min="0" max="10" id="toan"> <br> <br>
+
+    <label>Môn Văn</label>
+    <input type="number" min="0" max="10" id="van"> <br> <br>
+
+    <label>Môn Anh</label>
+    <input type="number" min="0" max="10" id="english"> <br> <br>
+
+    <label>Khu vực</label>
+    <select id="khuVuc">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2-NT</option>
+        <option value="0.25">KV2</option>
+        <option value="0">KV1</option>
+    </select> <br> <br>
+    <button id="btn">Tính điểm</button> <br>
+    <h3 id="result"></h3>
+    <script>
+        document.getElementById("btn").onclick =()=>{
+            let kv = Number(document.getElementById("khuVuc").value);
+            let toan = Number(document.getElementById("toan").value);
+            let van = Number(document.getElementById("van").value);
+            let anh = Number(document.getElementById("english").value);
+            let sum = toan +  van + anh + kv;
+            let html = `Tổng điểm ĐH khối D của bạn là: ${sum}`;
+            console.log(html);
+            document.getElementById("result").innerHTML = html;
+        }
+    </script>
+</body>
+</html>
